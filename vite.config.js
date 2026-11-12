@@ -5,6 +5,15 @@ export default defineConfig({
   base: './',
   build: {
     target: 'es2022',
+    rolldownOptions: {
+      output: {
+        // Emit the PDF.js worker (pdf.worker.min.mjs) as .js: some static servers, such as
+        // nginx on Coolify, don't map .mjs to a JavaScript MIME type, and browsers refuse
+        // to start a module worker served as application/octet-stream.
+        assetFileNames: (asset) =>
+          asset.names?.some((n) => n.endsWith('.mjs')) ? 'assets/[name]-[hash].js' : 'assets/[name]-[hash][extname]',
+      },
+    },
   },
   test: {
     include: ['tests/**/*.test.js'],
