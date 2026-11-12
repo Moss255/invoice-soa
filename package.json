@@ -1,0 +1,29 @@
+{
+  "name": "invoice-soa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build a statement of accounts from uploaded invoices, entirely in the browser.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.4.299",
+    "tesseract.js": "7.0.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.5",
+    "fake-indexeddb": "^6.2.6",
+    "happy-dom": "^21.0.4",
+    "vite": "8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

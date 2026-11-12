@@ -1,0 +1,73 @@
+/* Design tokens. Custom properties inherit through shadow roots, so every component reads these. */
+:root {
+  color-scheme: light dark;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-doc: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --bg: #f4f2ee;
+  --surface: #ffffff;
+  --surface-2: #faf9f6;
+  --paper: #fffefb;
+  --text: #1d2330;
+  --muted: #5f6676;
+  --faint: #8b91a0;
+  --line: #e2dfd8;
+  --line-strong: #c9c5bc;
+  --accent: #1f5c4a;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3efe9;
+  --warn: #9a5b00;
+  --warn-soft: #fbf0dc;
+  --danger: #a12d2d;
+  --danger-soft: #f8e4e2;
+  --ok: #2c6e3f;
+  --ok-soft: #e2f1e5;
+  --focus: #2f6fdb;
+  --shadow: 0 1px 2px rgb(20 24 33 / 6%), 0 4px 16px rgb(20 24 33 / 6%);
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171c;
+    --surface: #1c2027;
+    --surface-2: #20252d;
+    --paper: #1f232a;
+    --text: #e6e8ec;
+    --muted: #a3a9b6;
+    --faint: #7c8392;
+    --line: #2f3540;
+    --line-strong: #414857;
+    --accent: #6fc2a5;
+    --accent-ink: #0f1a16;
+    --accent-soft: #1d3a31;
+    --warn: #e9b25d;
+    --warn-soft: #3a2f1c;
+    --danger: #ef8a84;
+    --danger-soft: #3d2222;
+    --ok: #82cf96;
+    --ok-soft: #1f3526;
+    --focus: #7aa7f5;
+    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 6px 20px rgb(0 0 0 / 25%);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+soa-app:not(:defined) { display: block; min-height: 100vh; }
+
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; }
+}
